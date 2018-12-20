@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+Route::get('admin/layout', function () {
+    return view('admin.layout');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
