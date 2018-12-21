@@ -5,29 +5,37 @@
 <div class="card">
 <div class="container">
 	<br>
-	  <h2>Cadastro Cliente</h2>
-	  	<form id="form" action="/cliente/salvar" method="POST">
+	  <h2>Cadastro Produto</h2>
+	  	<form id="form" action="/produto/salvar" method="POST">
 
 	  	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 			<div class="form-group">
-		      <label for="nome">Nome:</label>
-		      <input type="text" class="form-control" id="nome" value="{{$cliente->nome}}" placeholder="Digite o nome" name="nome">
+		      <label for="referencia">Referência:</label>
+		      <input type="text" class="form-control" id="referencia" value="{{$produto->referencia}}" placeholder="Digite a Referencia" name="referencia">
 		    </div>
 		    <div class="form-group">
-		      <label for="endereco">Endereço:</label>
-		      <input type="text" class="form-control" id="endereco"  value="{{$cliente->endereco}}"  placeholder="Digite o endereço" name="endereco">
+		      <label for="descricao">Descrição:</label>
+		      <input type="text" class="form-control" id="descricao"  value="{{$produto->descricao}}"  placeholder="Digite a descrição" name="descricao">
 		    </div>
 		    <div class="form-group">
-		      <label for="cpfcnpj">CPF/CNPJ:</label>
-		      <input type="text" class="form-control" id="cpfcnpj"  value="{{$cliente->cpfcnpj}}" placeholder="Digite CPF/CNPJ" name="cpfcnpj">
+		      <label for="marca">Marca:</label>
+		      <input type="text" class="form-control" id="marca"  value="{{$produto->marca}}" placeholder="Digite a marca" name="marca">
 		    </div>
 		    <div class="form-group">
-		      <label for="telefone">Telefone:</label>
-		      <input type="text" class="form-control" id="telefones"  value="{{$cliente->telefones}}" placeholder="Digite o telefone" name="telefones">
+		      <label for="precoVenda">Preço de Venda:</label>
+		      <input type="text" class="form-control" id="precoVenda"  value="{{$produto->precoVenda}}" placeholder="Digite o preço de venda" name="precoVenda">
+		    </div>
+		    <div class="form-group">
+		      <label for="estoque">Estoque:</label>
+		      <input type="text" class="form-control" id="estoque"  value="{{$produto->estoque}}" placeholder="Está em estoque?" name="estoque">
+		    </div>
+		    <div class="form-group">
+		      <label for="unidadeVenda">Unidades de Venda:</label>
+		      <input type="text" class="form-control" id="unidadeVenda"  value="{{$produto->unidadeVenda}}" placeholder="Digite as unidades de venda" name="unidadeVenda">
 		    </div>
 		    
-		    <input type="hidden" name="id" value="{{ $cliente->id}}"/>
+		    <input type="hidden" name="id" value="{{ $produto->id}}"/>
 		    
 		    <button type="submit" class="btn btn-primary">Salvar</button>
 	  </form>

@@ -6,31 +6,35 @@
 <div class="card">
 	<div class="container">
 		<br>
-		<h3>Lista de Clientes</h3>	
+		<h3>Lista de Produtos</h3>	
 	<table class="table table-bordered ">
 		<thead class="thead-dark">
 			<tr>				
-				<th>Nome</th>
-				<th>Endereço</th>
-				<th>CPF/CNPJ</th>
-				<th>Telefones</th>
+				<th>Referência</th>
+				<th>Descrição</th>
+				<th>Marca</th>
+				<th>Preço de Venda</th>
+				<th>Estoque</th>
+				<th>Unidades de Venda</th>
 				<th>Editar</th>
 				<th>Excluir</th>
 				
 			</tr>
 		</thead>
 		<tbody>
-			@foreach($cliente as $row)
+			@foreach($produto as $row)
 				<tr>
-					<td>{{ $row->nome }}</td>
-					<td>{{ $row->endereco }}</td>
-					<td>{{ $row->cpfcnpj }}</td>
-					<td>{{ $row->telefones }}</td>
+					<td>{{ $row->referencia }}</td>
+					<td>{{ $row->descricao }}</td>
+					<td>{{ $row->marca }}</td>
+					<td>{{ $row->precoVenda }}</td>
+					<td>{{ $row->estoque }}</td>
+					<td>{{ $row->unidadeVenda }}</td>
 					<td>
 						<a href="/cliente?id={{$row->id}}">Editar</a>
 					</td>
 					<td>
-						<a onclick="return confirm('Deseja realmente excluir?');" href="/cliente/excluir?id={{$row->id}}">Excluir</a>
+						<a onclick="return confirm('Deseja realmente excluir?');" href="/produto/excluir?id={{$row->id}}">Excluir</a>
 					</td>
 				</tr>
 			@endforeach

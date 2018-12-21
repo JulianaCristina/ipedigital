@@ -26,5 +26,8 @@ Route::get('/cliente/listaCliente', 'ClienteController@listarCliente');
 Route::post('/cliente/salvar', 'ClienteController@salvar');
 Route::get('/cliente/excluir', 'ClienteController@excluir');
 
+
 Route::get('/produto', 'ProdutoController@index');
-Route::get('/produto', 'ProdutoController@index');
+Route::get('/produto/listaProduto', 'ProdutoController@listarProduto');
+Route::post('/produto/salvar', 'ProdutoController@salvar');
+Route::get('/produto/excluir', 'ProdutoController@excluir');
