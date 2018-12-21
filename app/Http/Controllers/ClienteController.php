@@ -32,10 +32,15 @@ class ClienteController extends Controller
     	}
 
     	$cliente->nome = $request->get('nome');
-    	$cliente->endereco = $request->get('endereco');
     	$cliente->cpfcnpj = $request->get('cpfcnpj');
+        $cliente->cep = $request->get('cep');
+        $cliente->uf = $request->get('uf');
+        $cliente->cidade = $request->get('cidade');
+        $cliente->bairro = $request->get('bairro');
+        $cliente->endereco = $request->get('endereco');
+        $cliente->numero = $request->get('numero');
     	$cliente->telefones = $request->get('telefones');
-
+        $cliente->celular = $request->get('celular');
     	$cliente->save();
 
     	return redirect("cliente/listaCliente");

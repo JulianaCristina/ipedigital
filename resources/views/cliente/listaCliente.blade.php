@@ -11,9 +11,15 @@
 		<thead class="thead-dark">
 			<tr>				
 				<th>Nome</th>
-				<th>Endereço</th>
 				<th>CPF/CNPJ</th>
+				<th>CEP</th>
+				<th>UF</th>
+				<th>Cidade</th>
+				<th>Bairro</th>
+				<th>Endereço</th>
+				<th>Número</th>
 				<th>Telefones</th>
+				<th>celular</th>
 				<th>Editar</th>
 				<th>Excluir</th>
 				
@@ -23,9 +29,15 @@
 			@foreach($cliente as $row)
 				<tr>
 					<td>{{ $row->nome }}</td>
-					<td>{{ $row->endereco }}</td>
 					<td>{{ $row->cpfcnpj }}</td>
+					<td>{{ $row->cep }}</td>
+					<td>{{ $row->uf }}</td>
+					<td>{{ $row->cidade }}</td>
+					<td>{{ $row->bairro }}</td>
+					<td>{{ $row->endereco }}</td>
+					<td>{{ $row->numero }}</td>
 					<td>{{ $row->telefones }}</td>
+					<td>{{ $row->celular }}</td>
 					<td>
 						<a href="/cliente?id={{$row->id}}">Editar</a>
 					</td>
