@@ -45,7 +45,7 @@
       <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/home">
         <img class="navbar-brand-full" src="{{ asset('admin/img/brand/logo.svg') }}" width="89" height="25" alt="CoreUI Logo">
         <img class="navbar-brand-minimized" src="{{ asset('admin/img/brand/sygnet.svg') }}" width="30" height="30" alt="CoreUI Logo">
       </a>
@@ -100,19 +100,41 @@
           <ul class="nav">
                           
             <li class="nav-title">Cadastros</li>
+
             <li class="nav-item nav-dropdown">
-              <a class="nav-link nav-dropdown-toggle" href="#">
-                <i class="nav-icon icon-puzzle"></i> Cadastros</a>
+              <a class="nav-link nav-dropdown-toggle" href="">
+                <i class="nav-icon icon-puzzle"></i> Cliente
+              </a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
-                  <a class="nav-link" href="base/breadcrumb.html">
-                    <i class="nav-icon icon-puzzle"></i>Cliente</a>
+                  <a class="nav-link" href="/cliente">
+                    <i class="nav-icon icon-puzzle"></i>Cadastro Cliente
+                  </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="base/cards.html">
-                    <i class="nav-icon icon-puzzle"></i>Produto</a>
+                  <a class="nav-link" href="/cliente/listaCliente">
+                    <i class="nav-icon icon-puzzle"></i>Lista Clientes</a>
                 </li>
             </ul>
+          </li>
+          <li class="divider"></li>
+            <li class="nav-item nav-dropdown">
+              <a class="nav-link nav-dropdown-toggle" href="">
+                <i class="nav-icon icon-puzzle"></i> Produto
+              </a>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                  <a class="nav-link" href="/produto">
+                    <i class="nav-icon icon-puzzle"></i>Cadastro Produto
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/produto/listaProduto">
+                    <i class="nav-icon icon-puzzle"></i>Lista Produtos</a>
+                </li>
+            </ul>
+          </li>
+
             <li class="divider"></li>
             <li class="nav-title">Vendas</li>
             <li class="nav-item nav-dropdown">
@@ -141,15 +163,6 @@
       </div>
       <main class="main">
         <!-- Breadcrumb-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">Home</li>
-          <li class="breadcrumb-item">
-            <a href="#">Admin</a>
-          </li>
-          <li class="breadcrumb-item active">Dashboard</li>
-          <!-- Breadcrumb Menu-->
-          
-        </ol>
         <div class="container-fluid">
           <div class="animated fadeIn"></div>
           @yield('content')

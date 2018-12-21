@@ -20,3 +20,11 @@ Route::get('admin/layout', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cliente', 'ClienteController@index');
+Route::get('/cliente/listaCliente', 'ClienteController@listarCliente');
+Route::post('/cliente/salvar', 'ClienteController@salvar');
+Route::get('/cliente/excluir', 'ClienteController@excluir');
+
+Route::get('/produto', 'ProdutoController@index');
+Route::get('/produto', 'ProdutoController@index');
