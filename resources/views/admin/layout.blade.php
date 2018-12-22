@@ -192,7 +192,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.9/jquery.mask.min.js'></script>
 
     <script  src="{{ asset('admin/js/cep.js') }}"></script>
-
+    <script  src="{{ asset('admin/js/vue.js') }}"></script>
   </body>
 </html>
 

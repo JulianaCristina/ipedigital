@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produto;
+use App\Http\Requests\Produto\ProdutoFormRequest;
+
 
 class ProdutoController extends Controller
 {
@@ -24,7 +26,7 @@ class ProdutoController extends Controller
 				array('produto'=> Produto::All()));
     }
 
-    function salvar(Request $request){
+    function salvar(ProdutoFormRequest $request){
     	if ($request->get('id') == null) {
     		$produto = new Produto();
     	}else{
