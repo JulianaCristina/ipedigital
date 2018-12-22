@@ -15,7 +15,7 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('referencia',100);
+            $table->string('referencia',10);
             $table->string('descricao',100);
             $table->string('marca',100);
             $table->float('precoVenda',8,2);

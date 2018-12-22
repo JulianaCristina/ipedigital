@@ -1,36 +1,40 @@
-document = getElementById("app")
+ $(document).ready(function() {
 
-if (element != null) {
-  var app = new Vue({
-    el: '#app',
-    data: {
-      cep: '',
-      endereco: {},
-      naoLocalizado: false },
+  $('#cep').blur(function(){
 
-      mounted: function mounted() {
-        $("#inputCep").mask("00000-000");
-      },
-      methods: {
-        registrar: function registrar() {
-      // processar dados
-    },
-    buscar: function buscar() {
-      var self = this;
+    function limpa_formulário_cep() {
 
-      self.naoLocalizado = false;
+      $("#uf").val("");
+      $("#cidade").val("");
+      $("#bairro").val("");
+      $("#endereco").val("");
 
-      if (/^[0-9]{5}-[0-9]{3}$/.test(this.cep)) {
-        $.getJSON("https://viacep.com.br/ws/" + this.cep + "/json/", function (endereco) {
-          if (endereco.erro) {
-            self.endereco = {};
-            $("#endereco").focus();
-            self.naoLocalizado = true;
-            return;
+    }
+    var cep = $(this).val().replace(/\D/g, '');
+
+    if (cep != "") {
+      var validacep = /^[0-9]{8}$/;
+      if (validacep.test(cep)) {
+        $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+          if (!("erro" in dados)) {
+            $("#uf").val(dados.uf);
+            $("#cidade").val(dados.localidade);
+            $("#bairro").val(dados.bairro);
+            $("#endereco").val(dados.logradouro);
+          }else {
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
           }
-          self.endereco = endereco;
-          console.log(endereco);
-          $("numero").focus();
         });
       }
-    } } });}
+      else {
+
+        limpa_formulário_cep();
+                        //alert("Formato de CEP inválido.");
+                      }
+                    }else {
+                      limpa_formulário_cep();
+                    }
+                  }); 
+  $('#cep').mask('00000-000');
+});

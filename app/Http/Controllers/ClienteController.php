@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cliente;
+use App\Http\Requests\Cliente\ClienteFormRequest;
 
 class ClienteController extends Controller
 {
@@ -24,7 +25,8 @@ class ClienteController extends Controller
 				array('cliente'=> Cliente::All()));
     }
 
-    function salvar(Request $request){
+    function salvar(ClienteFormRequest $request){
+
     	if ($request->get('id') == null) {
     		$cliente = new Cliente();
     	}else{

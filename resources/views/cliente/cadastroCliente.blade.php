@@ -6,6 +6,15 @@
 	<div class="container">
 		<br>
 		<h2>Cadastro Cliente</h2>
+
+		@if (isset($errors) & count($errors)>0)
+		<div class="alert alert-danger">
+			@foreach ($errors->all() as $error)
+			<p>{{$error}}</p>
+			@endforeach
+		</div>
+		@endif
+
 		<form id="form" action="/cliente/salvar" method="POST">
 			<div class="row">
 
@@ -30,9 +39,9 @@
 					<input type="text" id="uf" name="uf" value="{{$cliente->uf}}"  class="form-control" readonly v-model="endereco.uf" />
 				</div>
 
-				<div class="col-md-3"><span class="text-danger" v-show="naoLocalizado">
+				{{-- <div class="col-md-3"><span class="text-danger" v-show="naoLocalizado">
 					<strong>* CEP não encontrado</strong></span>
-				</div>
+				</div> --}}
 				<div class="form-group col-sm-12 col-lg-12">
 					<label for="cidade">Cidade: </label>
 					<input type="text" id="cidade" name="cidade" value="{{$cliente->cidade}}"  class="form-control" readonly v-model="endereco.localidade" />
@@ -47,10 +56,10 @@
 				</div>
 				<div class="form-group  col-sm-12 col-lg-6">
 					<label for="numero">Número: </label>
-					<input type="text" id="numero" name="numero" class="form-control"  />
+					<input type="text" id="numero" name="numero" value="{{$cliente->numero}}"  class="form-control"  />
 				</div>  
 				<div class="form-group col-sm-12 col-lg-6">
-					<label for="telefone">Telefone:</label>
+					<label for="telefones">Telefone:</label>
 					<input type="text" class="form-control" id="telefones"  value="{{$cliente->telefones}}" placeholder="Digite o telefone" name="telefones">
 				</div>
 				<div class="form-group col-sm-12 col-lg-6">
@@ -60,8 +69,8 @@
 
 				<input type="hidden" name="id" value="{{ $cliente->id}}"/>
 				<div class="col-sm-12 col-md-4 col-lg-4">
-				<button type="submit" class="btn btn-primary">Salvar</button>					
-				</div>
+					<button type="submit" class="btn btn-primary">Salvar</button>					
+				</div>  
 			</div>
 		</form>
 	</div>
