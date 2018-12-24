@@ -35,32 +35,39 @@
 				</div>
 				<div class="form-group col-sm-12 col-lg-6">
 					<label for="precoVenda">Preço de Venda:</label>
-					<input type="text" v-model="precoVenda" class="form-control" id="precoVenda"  value="{{$produto->precoVenda}}" placeholder="Digite o preço de venda" name="precoVenda" @keypress.prevent="maskCurrency('precoVenda',$event)" @keyup.delete="maskCurrency('precoVenda',$event)">
+					<input type="text" v-model="precoVenda" class="form-control" id="precoVenda"  value=" {{$produto->precoVenda}} " placeholder="Digite o preço de venda" name="precoVenda">
+				</div>
+{{-- {{  'R$ '.number_format($produto->precoVenda, 2, ',', '.') }}
+--}}
+			
+				<div class="form-group col-sm-12 col-lg-6">
+					<label for="estoque">Estoque</label>
+					<input type="text" class="form-control" id="estoque"  value="{{$produto->estoque}}" placeholder="Digite as unidades de venda" name="estoque">
 				</div>
 
 				<div class="form-group col-sm-12 col-lg-6">
-					<label for="estoque">Estoque</label>
-					<select class="form-control" id="estoque" name="estoque" value="{{$produto->estoque}}">
+					<label for="unidade_vendas">Unidade</label>
+					<select class="form-control" id="unidade_vendas" name="unidade_vendas">
 						<option value="0">Selecione um estado</option>
-						<option >Em estoque</option>
-						<option >Fora de estoque</option>					
+						@foreach ($unidade_vendas as $row)
+						@if ($row->id == $produto->unidade_vendas)
+							<option value="{{$row->id}}" selected="selected">{{$row->unidade}}</option>
+						@else
+							<option value="{{$row->id}}">{{$row->unidade}}</option>
+						@endif
+						@endforeach					
 					</select>
 				</div>
 
-				<div class="form-group col-sm-12 col-lg-6">
-					<label for="unidadeVenda">Unidades de Venda:</label>
-					<input type="text" class="form-control" id="unidadeVenda"  value="{{$produto->unidadeVenda}}" placeholder="Digite as unidades de venda" name="unidadeVenda">
-				</div>
+					<input type="hidden" name="id" value="{{ $produto->id}}"/>
 
-				<input type="hidden" name="id" value="{{ $produto->id}}"/>
-
-				<div class="col-sm-12 col-lg-12">					
-					<button type="submit" class="btn btn-primary">Salvar</button>
+					<div class="col-sm-12 col-lg-12">					
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
+		<br>
 	</div>
-	<br>
-</div>
 
-@endsection
+	@endsection

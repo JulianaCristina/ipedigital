@@ -23,13 +23,14 @@ class ProdutoFormRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
            'referencia'    => 'required|max:10',
             'descricao'    => 'required|min:5|max:100',
             'marca'    => 'required|min:2|max:100',
-            'precoVenda'   => 'required|numeric',
-            'estoque'      => 'required|not_in:0',
-            'unidadeVenda' => 'required|numeric',
+            'precoVenda'   => ['required', 'regex:/^\d+([.]\d{1,2})?$/'],
+            'estoque'      => 'required|numeric',
+            'unidade_vendas' => 'required|not_in: 0',
             
         ];
     }
@@ -37,15 +38,15 @@ class ProdutoFormRequest extends FormRequest
     public function messages()
     {
         return[
-            
+
             'referencia.required' => 'O campo referência é obrigatório',
             'descricao.required' => 'O campo descrição é obrigatório',
             'marca.required' => 'O campo marca é obrigatório',
             'precoVenda.required' => 'O campo Preço de Venda é obrigatório',
-            'precoVenda.numeric' => ' Preço de Venda deve ser um número',
+            'precoVenda.numeric' => ' O campo Preço de Venda deve ser um número',
             'estoque.required' => 'O campo estoque é obrigatório',
-            'estoque.not_in' => 'Selecione um estado de estoque',
-            'unidadeVenda.required' => 'O campo unidade de Venda é obrigatório',
+            'estoque.numeric' => 'O campo estoque deve ser um número',
+            'unidade_vendas.required' => 'O campo unidade de Venda é obrigatório',
         ];
     }
 }

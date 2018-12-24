@@ -29,9 +29,9 @@
 					<td>{{ $row->marca }}</td>
 					<td>{{ $row->precoVenda }}</td>
 					<td>{{ $row->estoque }}</td>
-					<td>{{ $row->unidadeVenda }}</td>
+					<td>{{ $row->unidade_vendas }}</td>
 					<td>
-						<a href="/cliente?id={{$row->id}}">Editar</a>
+						<a href="/produto?id={{$row->id}}">Editar</a>
 					</td>
 					<td>
 						<a onclick="return confirm('Deseja realmente excluir?');" href="/produto/excluir?id={{$row->id}}">Excluir</a>

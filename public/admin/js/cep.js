@@ -37,4 +37,6 @@
                     }
                   }); 
   $('#cep').mask('00000-000');
+
+  $('#precoVenda').mask('###0.00', {reverse: true});
 });
