@@ -11,10 +11,11 @@
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
+
                         </div>
                     @endif
 
-                    BEM VINDO(A)!
+                   Bem vindo(a) {{ Auth::user()->name }}!
                 </div>
             </div>
         </div>
