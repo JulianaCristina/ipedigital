@@ -72,18 +72,13 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
-
-              
-
           </a>
           </div>
         </li>
       </ul>
-      
-      <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+     
     </header>
+    
     <div class="app-body">
       <div class="sidebar">
         <nav class="sidebar-nav">

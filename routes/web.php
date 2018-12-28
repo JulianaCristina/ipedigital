@@ -21,18 +21,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cliente', 'ClienteController@index');
-Route::get('/cliente/listaCliente', 'ClienteController@listarCliente');
-Route::post('/cliente/salvar', 'ClienteController@salvar');
-Route::get('/cliente/excluir', 'ClienteController@excluir');
 
 
-Route::get('/produto', 'ProdutoController@index');
-Route::get('/produto/listaProduto', 'ProdutoController@listarProduto');
-Route::post('/produto/salvar', 'ProdutoController@salvar');
-Route::get('/produto/excluir', 'ProdutoController@excluir');
+	Route::get('/cliente', 'ClienteController@index');
+	Route::get('/cliente/listaCliente', 'ClienteController@listarCliente');
+	Route::post('/cliente/salvar', 'ClienteController@salvar');
+	Route::get('/cliente/excluir', 'ClienteController@excluir');
 
-Route::get('/venda', 'VendaController@index');
-Route::get('/venda/listaVenda', 'VendaController@listarVenda');
-Route::post('/venda/salvar', 'VendaController@salvar');
-Route::get('/venda/excluir', 'VendaController@excluir');
+
+	Route::get('/produto', 'ProdutoController@index');
+	Route::get('/produto/listaProduto', 'ProdutoController@listarProduto');
+	Route::post('/produto/salvar', 'ProdutoController@salvar');
+	Route::get('/produto/excluir', 'ProdutoController@excluir');
+
+	Route::get('/venda', 'VendaController@index');
+	Route::get('/venda/listaVenda', 'VendaController@listarVenda');
+	Route::post('/venda/salvar', 'VendaController@salvar');
+	Route::get('/venda/excluir', 'VendaController@excluir');
+
