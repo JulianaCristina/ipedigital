@@ -12,22 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+	return view('auth.login');
 });
 Route::get('admin/layout', function () {
-    return view('admin.layout');
-});
-
-Route::get('/naoTemAcesso', function () {
-    return view('/naoTemAcesso');
+	return view('admin.layout');
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/auth/', 'Auth\RegisterController@index');
 
-Route::middleware(['auth', 'check.loginAdmin'])->group(function () { 
-	
+
+
 	Route::get('/cliente', 'ClienteController@index');
 	Route::get('/cliente/listaCliente', 'ClienteController@listarCliente');
 	Route::post('/cliente/salvar', 'ClienteController@salvar');
@@ -39,22 +34,8 @@ Route::middleware(['auth', 'check.loginAdmin'])->group(function () {
 	Route::post('/produto/salvar', 'ProdutoController@salvar');
 	Route::get('/produto/excluir', 'ProdutoController@excluir');
 
-
 	Route::get('/venda', 'VendaController@index');
 	Route::get('/venda/listaVenda', 'VendaController@listarVenda');
 	Route::post('/venda/salvar', 'VendaController@salvar');
 	Route::get('/venda/excluir', 'VendaController@excluir');
 
-});
-
-Route::middleware(['auth', 'check.loginUser'])->group(function () { 
-	Route::get('/cliente', 'ClienteController@index');
-	Route::get('/cliente/listaCliente', 'ClienteController@listarCliente');
-	Route::post('/cliente/salvar', 'ClienteController@salvar');
-	Route::get('/cliente/excluir', 'ClienteController@excluir');
-	Route::get('/venda', 'VendaController@index');
-	Route::get('/venda/listaVenda', 'VendaController@listarVenda');
-	Route::post('/venda/salvar', 'VendaController@salvar');
-	Route::get('/venda/excluir', 'VendaController@excluir');
-
-});
