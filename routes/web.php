@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+	return view('auth.login');
 });
 Route::get('admin/layout', function () {
-    return view('admin.layout');
+	return view('admin.layout');
 });
 Auth::routes();
 
@@ -31,3 +31,8 @@ Route::get('/produto', 'ProdutoController@index');
 Route::get('/produto/listaProduto', 'ProdutoController@listarProduto');
 Route::post('/produto/salvar', 'ProdutoController@salvar');
 Route::get('/produto/excluir', 'ProdutoController@excluir');
+
+Route::get('/venda', 'VendaController@index');
+Route::get('/venda/listaVenda', 'VendaController@listarVenda');
+Route::post('/venda/salvar', 'VendaController@salvar');
+Route::get('/venda/excluir', 'VendaController@excluir');

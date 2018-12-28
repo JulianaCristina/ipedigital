@@ -132,11 +132,11 @@
                 <i class="nav-icon icon-star"></i> Vendas</a>
               <ul class="nav-dropdown-items">
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html" target="_top">
+                  <a class="nav-link" href="/venda/listaVenda" target="_top">
                     <i class="nav-icon icon-star"></i> Listar Vendas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="register.html" target="_top">
+                  <a class="nav-link" href="/venda" target="_top">
                     <i class="nav-icon icon-star"></i> Nova Venda</a>
                 </li>
                 <li class="nav-item">
